@@ -13,6 +13,8 @@ use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 use Album\Model\Album;
 use Album\Model\AlbumTable;
+use Album\Model\User;
+use Album\Model\UserTable;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 
@@ -57,8 +59,36 @@ class Module
                     $resultSetPrototype->setArrayObjectPrototype(new Album());
                     return new TableGateway('album', $dbAdapter, null, $resultSetPrototype);
                 },
+                'Album\Model\UserTable' =>  function($sm) {
+                    $tableGateway = $sm->get('UserTableGateway');
+                    $user = new UserTable($tableGateway);
+                    return $user;
+                },
+                'UserTableGateway' => function ($sm) {
+                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    $resultSetPrototype = new ResultSet();
+                    $resultSetPrototype->setArrayObjectPrototype(new User());
+                    return new TableGateway('user', $dbAdapter, null, $resultSetPrototype);
+                },
             ),
         );
     }
-
+//    public function getServiceConfig1()
+//    {
+//        return array(
+//            'factories' => array(
+//                'Album\Model\UserTable' =>  function($sm) {
+//                    $tableGateway = $sm->get('UserTableGateway');
+//                    $user = new UserTable($tableGateway);
+//                    return $user;
+//                },
+//                'UserTableGateway' => function ($sm) {
+//                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+//                    $resultSetPrototype = new ResultSet();
+//                    $resultSetPrototype->setArrayObjectPrototype(new User());
+//                    return new TableGateway('user', $dbAdapter, null, $resultSetPrototype);
+//                },
+//            ),
+//        );
+//    }
 }
