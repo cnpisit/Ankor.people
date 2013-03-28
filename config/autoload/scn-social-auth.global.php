@@ -35,7 +35,7 @@ $settings = array(
      *
      * Please specify if Facebook is enabled
      */
-    'facebook_enabled' => true,
+    //'facebook_enabled' => true,
 
     /**
      * Facebook Scope
@@ -46,7 +46,7 @@ $settings = array(
      * See the Facebook docs for a full list of available permissions:
      * http://developers.facebook.com/docs/reference/api/permissions.
      */
-    'facebook_scope' => '',
+    //'facebook_scope' => '',
 
     /**
      * Facebook Display
@@ -58,14 +58,14 @@ $settings = array(
      * Read the Facebook docs for more details:
      * http://developers.facebook.com/docs/reference/dialogs#display. Default: page
      */
-    'facebook_display' => '',
+    //'facebook_display' => 'face',
 
     /**
      * Foursquare Enabled
      *
      * Please specify if Foursquare is enabled
      */
-    'foursquare_enabled' => true,
+    //'foursquare_enabled' => true,
 
     /**
      * Github Enabled

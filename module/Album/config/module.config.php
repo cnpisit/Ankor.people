@@ -15,11 +15,30 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
+                        'controller' => 'Album\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
             ),
+//        'router' => array(
+//        'routes' => array(
+            'album' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/album[/][:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Album\Controller\Index',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+//        ),
+//    ),
+
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -69,7 +88,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Album\Controller\Index' => 'Album\Controller\IndexController'
         ),
     ),
     'view_manager' => array(
@@ -80,7 +99,7 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
+            'album/index/index' => __DIR__ . '/../view/album/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),

@@ -11,6 +11,6 @@
     "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.1.3",
-		"socalnick/scn-social-auth": "dev-master"
+	"socalnick/scn-social-auth": "dev-master"
     }
 }

@@ -11,26 +11,24 @@
  * credentials from accidentally being committed into version control.
  */
 
-$dbParams = array(
-	'hostname'  => 'changeme',
-	'username'  => 'root',
-    'password'  => '',
+$db = array(
     'database'  => 'album',
-    
-    
+    'username'  => 'root',
+    'password'  => '',
+    'hostname'  => 'localhost',
 );
 
 return array(
     'service_manager' => array(
         'factories' => array(
-            'Zend\Db\Adapter\Adapter' => function ($sm) use ($dbParams) {
+            'Zend\Db\Adapter\Adapter' => function ($sm) use ($db) {
                 return new Zend\Db\Adapter\Adapter(array(
                     'driver'    => 'pdo',
-                    'dsn'       => 'mysql:dbname='.$dbParams['database'].';host='.$dbParams['hostname'],
-                    'database'  => $dbParams['database'],
-                    'username'  => $dbParams['username'],
-                    'password'  => $dbParams['password'],
-                    'hostname'  => $dbParams['hostname'],
+                    'dsn'       => 'mysql:dbname='.$db['database'].';host='.$db['hostname'],
+                    'database'  => $db['database'],
+                    'username'  => $db['username'],
+                    'password'  => $db['password'],
+                    'hostname'  => $db['hostname'],
                 ));
             },
         ),
