@@ -48,6 +48,7 @@ class UsersController extends AbstractActionController
         return new ViewModel(array(
             'users' => $this->getEntityManager()->getRepository('Album\Entity\Users')->findAll() 
         ));
+    var_dump($users);
     }
     
     public function addAction(){
