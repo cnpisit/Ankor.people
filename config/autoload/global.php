@@ -37,6 +37,8 @@ return array(
                             'host' => 'localhost',
                             'port' => '3306',
                             'dbname' => 'album',
+							'user' => 'root',
+							'password' => ''
                          )
                    )
             )
