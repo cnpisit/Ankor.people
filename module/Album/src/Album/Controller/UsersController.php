@@ -15,8 +15,7 @@ class UsersController extends AbstractActionController
 
     protected function setEntityManager(EntityManager $em)
     {
-      $this->entityManager = $em;
-      return $this;
+        return $this->entityManager = $em;
     }
     
     protected function getEntityManager()
@@ -40,12 +39,15 @@ class UsersController extends AbstractActionController
 //          return new ViewModel(array(
 //            'users' => $this->getUserTable()->fetchAll(),
 //        ));
-        $repository = $this->getEntityManager()->getRepository('Album\Entity\Users');
-        $users      = $repository->findAll();
- 
-        return array(
-            'users' => $users
-        );
+//        $repository = $this->getEntityManager()->getRepository('Album\Entity\Users');
+//        $users      = $repository->findAll();
+// 
+//        return array(
+//            'users' => $users
+//        );
+        return new ViewModel(array(
+            'users' => $this->getEntityManager()->getRepository('Album\Entity\Users')->findAll() 
+        ));
     }
     
     public function addAction(){
