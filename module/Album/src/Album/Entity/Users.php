@@ -5,7 +5,19 @@ namespace Album\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * 
+ * @ORM\Table(name="user")
+ * @ORM\Entity
+ */
 class Users {
+	/**
+     * @var integer
+     *
+     * @ORM\Column(name="user_id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
     protected $user_id;
     protected $username;
     protected $email;
