@@ -5,6 +5,7 @@ $db = array(
     'username'  => 'root',
     'password'  => '',
     'hostname'  => 'localhost',
+    'port'     => '3306',
 );
 
 return array(
@@ -18,6 +19,7 @@ return array(
                     'username'  => $db['username'],
                     'password'  => $db['password'],
                     'hostname'  => $db['hostname'],
+//                    'port'      => $db['port'],
                 ));
             },
         ),

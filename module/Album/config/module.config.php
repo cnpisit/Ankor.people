@@ -6,6 +6,7 @@
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
+namespace Album;
 
 return array(
     'router' => array(
@@ -127,8 +128,8 @@ return array(
                 __NAMESPACE__ . '_driver' => array(
                     'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                     'cache' => 'array',
-//                    'paths' => array(__DIR__ . '/../src/' . __NAMESPACE__ . '/Entity'
-                        'paths' => array(__DIR__ . '/../src/Album/Entity')
+                    'paths' => array(__DIR__ . '/../src/' . __NAMESPACE__ . '/Entity')
+
                 ),
                 'orm_default' => array(
                     'drivers' => array(

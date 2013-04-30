@@ -1,6 +1,7 @@
 <?php
 
 namespace Album\Entity;
+namespace Album\Entity;
 //namespace \Entity;
 
 use Doctrine\ORM\Mapping as ORM;
