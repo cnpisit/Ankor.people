@@ -1,6 +1,7 @@
 <?php
 
 namespace Album\Entity;
+//namespace \Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -10,13 +11,14 @@ class Users {
     protected $email;
     protected $display_name;
     protected $password;
-    function __construct($user_id, $username, $email, $display_name, $password) {
-        $this->user_id = $user_id;
-        $this->username = $username;
-        $this->email = $email;
-        $this->display_name = $display_name;
-        $this->password = $password;
-    }
+    
+//    function __construct($user_id, $username, $email, $display_name, $password) {
+//        $this->user_id = $user_id;
+//        $this->username = $username;
+//        $this->email = $email;
+//        $this->display_name = $display_name;
+//        $this->password = $password;
+//    }
 
     
     public function getUser_id() {

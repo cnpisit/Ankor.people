@@ -70,6 +70,7 @@ class Module
                     $resultSetPrototype->setArrayObjectPrototype(new User());
                     return new TableGateway('user', $dbAdapter, null, $resultSetPrototype);
                 },
+                        
             ),
         );
     }
