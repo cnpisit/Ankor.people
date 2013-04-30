@@ -108,8 +108,8 @@ It is recommended to add this module to your Zend Framework 2 application using 
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "dev-master",
-        "socalnick/scn-social-auth": "dev-master"
+        "zendframework/zendframework": "2.1.3",
+	"socalnick/scn-social-auth": "1.9.2"
     }
 }
 ```
@@ -253,9 +253,9 @@ It is recommended to add this module to your Zend Framework 2 application using 
     "homepage": "http://framework.zend.com/",
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "dev-master",
-        "socalnick/scn-social-auth": "dev-master",
-		"doctrine/doctrine-orm-module": "dev-master" <--added
+         "zendframework/zendframework": "2.1.3",
+	"socalnick/scn-social-auth": "1.9.2",
+        "doctrine/doctrine-orm-module": "dev-master"
     }
 }
 `````

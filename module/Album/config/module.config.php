@@ -15,7 +15,7 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Album\Controller\Index',
+                        'controller' => 'Index',
                         'action'     => 'index',
                     ),
                 ),
@@ -31,7 +31,7 @@ return array(
                         'id'     => '[0-9]+',
                     ),
                     'defaults' => array(
-                        'controller' => 'Album\Controller\Index',
+                        'controller' => 'Index',
                         'action'     => 'index',
                     ),
                 ),
@@ -101,7 +101,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Album\Controller\Index' => 'Album\Controller\IndexController',
+            'Index' => 'Album\Controller\IndexController',
             'Users' => 'Album\Controller\UsersController'
         ),
     ),
@@ -114,7 +114,7 @@ return array(
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
             'album/index/index' => __DIR__ . '/../view/album/index/index.phtml',
-            'album/user/index'  => __DIR__ . '/../view/album/user/index.phtml',
+            'album/users/index'  => __DIR__ . '/../view/album/users/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),
@@ -122,18 +122,19 @@ return array(
             __DIR__ . '/../view',
         ),
     ),
-    'doctrine' => array(
-    'driver' => array(
-      __NAMESPACE__ . '_driver' => array(
-        'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-        'cache' => 'array',
-        'paths' => array(__DIR__ . '/../src/' . __NAMESPACE__ . '/Entity')
-      ),
-      'orm_default' => array(
-        'drivers' => array(
-          __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
-        )
-      )
-    )
-  )
+    	'doctrine' => array(
+            'driver' => array(
+                __NAMESPACE__ . '_driver' => array(
+                    'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                    'cache' => 'array',
+//                    'paths' => array(__DIR__ . '/../src/' . __NAMESPACE__ . '/Entity'
+                        'paths' => array(__DIR__ . '/../src/Album/Entity')
+                ),
+                'orm_default' => array(
+                    'drivers' => array(
+                    __NAMESPACE__ . '\Entity' => __NAMESPACE__ . '_driver'
+                ),
+            ),
+        ),
+    ),
 );
