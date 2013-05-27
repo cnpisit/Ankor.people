@@ -1,4 +1,6 @@
 ZendSkeletonApplication
+cnpisit
+
 =======================
 
 Introduction
@@ -48,18 +50,18 @@ Alternatively, you can install using native git submodules:
 
 Virtual Host
 ------------
-#	<VirtualHost *:80>
-	 ServerName ankorpeopel.local
-	 DocumentRoot "D:\web\ankorpeople\public"
-	 <Directory "D:\web\ankorpeople\public">
-	  Options Indexes FollowSymLinks MultiViews
-	  # AllowOverride None
-	  AllowOverride FileInfo
-	  Order allow,deny
-	  Allow from all
-	 </Directory>
-	 DirectoryIndex index.html index.php
-#	</VirtualHost>
+<VirtualHost *:80>
+ ServerName ankorpeopel.local
+ DocumentRoot "D:\web\ankorpeople\public"
+ <Directory "D:\web\ankorpeople\public">
+  Options Indexes FollowSymLinks MultiViews
+  # AllowOverride None
+  AllowOverride FileInfo
+  Order allow,deny
+  Allow from all
+ </Directory>
+ DirectoryIndex index.html index.php
+</VirtualHost>
 
 
 
