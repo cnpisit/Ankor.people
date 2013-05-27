@@ -325,5 +325,8 @@ return array(
   )
 );
 
+```
+https://docs.google.com/document/d/1zwFUwtJytgjxrudz-Bt3kLBY6kIl0_aqIdlhL_ctfoc/edit (command to generate Entity automatically)
+
 
 

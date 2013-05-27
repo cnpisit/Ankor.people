@@ -6,7 +6,7 @@ namespace Album\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * 
+ *
  * @ORM\Table(name="user")
  * @ORM\Entity
  */
@@ -19,11 +19,12 @@ class Users {
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     protected $user_id;
+
     protected $username;
     protected $email;
     protected $display_name;
     protected $password;
-    
+
 //    function __construct($user_id, $username, $email, $display_name, $password) {
 //        $this->user_id = $user_id;
 //        $this->username = $username;
@@ -32,7 +33,7 @@ class Users {
 //        $this->password = $password;
 //    }
 
-    
+
     public function getUser_id() {
         return $this->user_id;
     }
@@ -74,13 +75,20 @@ class Users {
     }
 
 
-    
-    
+
+
 }
 //$conn = mysqli_connect('localhost', 'root', '', 'album?zeroDateTimeBehavior=convertToNull', '3306');
 //if (!$conn) {
 //    die('Could not connect to MySQL: ' . mysqli_connect_error());
-//}
-//mysqli_query($conn, 'SET NAMES \'utf8\'');
-//// TODO: insert your code here.
-//mysqli_close($conn);
+//
+    /**
+     * Get user_id
+     *
+     * @return integer 
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+}

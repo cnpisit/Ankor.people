@@ -1,0 +1,44 @@
+<?php
+
+namespace Album\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * UserProvider
+ *
+ * @ORM\Table(name="user_provider")
+ * @ORM\Entity
+ */
+class UserProvider
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="provider_id", type="string", length=50, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $providerId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="provider", type="string", length=255, nullable=false)
+     */
+    private $provider;
+
+    /**
+     * @var \Album\Entity\User
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="Album\Entity\User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
+     * })
+     */
+    private $user;
+
+
+}
