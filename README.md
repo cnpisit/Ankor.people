@@ -328,7 +328,10 @@ return array(
 );
 
 ```
-https://docs.google.com/document/d/1zwFUwtJytgjxrudz-Bt3kLBY6kIl0_aqIdlhL_ctfoc/edit (command to generate Entity automatically)
+command to generate Entity automatically
+``
+php vendor\doctrine\doctrine-module\bin\doctrine-module orm:convert-mapping annotation --from-database --namespace=<MODULE_NAME>\Entity\  module\<MODULE_NAME>\src --force
 
+php vendor\doctrine\doctrine-module\bin\doctrine-module orm:generate-entities --generate-annotations=true module\<MODULE_NAME>\src
 
 
