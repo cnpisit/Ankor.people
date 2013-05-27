@@ -77,7 +77,7 @@ class Users {
 
 
 
-}
+
 //$conn = mysqli_connect('localhost', 'root', '', 'album?zeroDateTimeBehavior=convertToNull', '3306');
 //if (!$conn) {
 //    die('Could not connect to MySQL: ' . mysqli_connect_error());

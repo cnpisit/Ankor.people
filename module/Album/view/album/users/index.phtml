@@ -1,6 +1,15 @@
+
 <?php
-//   foreach($userstatus as $user):
-//       var_dump($user);
-//   endforeach;
-//var_dump($userdata);
+$arr = array();
+foreach ($fuck as $u => $me)
+{   
+        $arr[$u] = $me->getUserId();
+}
+var_dump($arr);
+
+   
 ?>
+<button class="win-command">
+    <a href="<?php echo $this->url('users/add', array('controller' => 'users', 'action' => 'add')) ?>" class="win-commandimage win-commandring"><span class="win-label">Add shop</span>&#xe12c;</a>
+    
+</button>

@@ -54,9 +54,17 @@ $this->headTitle($title);
 </tr>
 <?php endforeach; ?>
 </table>
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      showOn: "button",
+      buttonImage: "images/calendar.gif",
+      buttonImageOnly: true
+    });
+  });
+  </script>
 <form>
-	<input type="text" class="datepicker" />
-	<script type="text/javascript">
-		jQuery('.datepicker').datepicker();
-	</script>
+    <p>Date:<input type="text" id="datepicker" /></p>
 </form>

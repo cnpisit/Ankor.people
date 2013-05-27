@@ -15,11 +15,15 @@
 
         <!-- Scripts -->
         <?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
-										->prependFile($this->basePath() . '/fnagel-jquery-ui-ab6c744/ui/jquery.ui.core.js')
+                                      ->prependFile($this->basePath() . '/fnagel-jquery-ui-ab6c744/ui/jquery.ui.core.js')
                                       ->prependFile($this->basePath() . '/fnagel-jquery-ui-ab6c744/ui/jquery.ui.datepicker.js')
-									  ->prependFile($this->basePath() . '/js/bootstrap.min.js')
-                                      ->prependFile($this->basePath() . '/js/jquery.min.js')
+                                      ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+                                      ->prependFile($this->basePath() . '/js/jquery-1.9.1.js')
 									  ?>
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <!--<link rel="stylesheet" href="/resources/demos/style.css" />--> 
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -40,25 +44,10 @@
                         </ul>
                     </div><!--/.nav-collapse -->
                     <div class="dropdown" style="float: right">
-                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Member</a>
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo $this->url('zfcuser/login'); ?> ">Member</a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                                 <li class="active" align="right">
-                                    <a href="
-                                        <?php // 	if (!$this->getServiceLocator()->get('zfcuser_user_service')->getAuthService()->hasIdentity()) {
-//                                                   return $this->redirect()->toRoute('zfcuser/login');
-                                                     echo $this->url('zfcuser/login');
-//                                                } else {
-//                                                    return $this->redirect()->toRoute('zfcuser/logout');
-//                                                    echo $this->url('zfcuser/login');
-//                                                }
-                                        ?>">
-                                        <?php // if (!$this->getServiceLocator()->get('zfcuser_user_service')->getAuthService()->hasIdentity()) {
-//                                                   return $this->redirect()->toRoute('zfcuser/login');
-                                                     echo $this->translate('Login');
-//                                                } else {
-//                                                    return $this->redirect()->toRoute('zfcuser/logout');
-//                                                    echo $this->translate('Logout');
-//                                                } ?></a>
+                                    <a href="<?php echo $this->url('zfcuser/login'); ?> ">login</a>
                                 </li>  
                            </ul>
                    </div>
@@ -69,7 +58,7 @@
             <?php echo $this->content; ?>
             <hr>
             <footer>
-                <p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
+                <!--<p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>-->
             </footer>
         </div> <!-- /container -->
         <?php echo $this->inlineScript() ?>
