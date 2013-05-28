@@ -1,4 +1,5 @@
 <?php
+
 namespace Album\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -11,47 +12,87 @@ use Doctrine\ORM\Mapping as ORM;
  */
 
 class Status{
-	/**
-     * @var integer
+/**
+ * Status
+ *
+ * @ORM\Table(name="status")
+ * @ORM\Entity
+ */
+    private $stId;
+
+    /**
+     * @var string
      *
-     * @ORM\Column(name="st_id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(name="st_com", type="string", length=200, nullable=false)
      */
+    private $stCom;
 
-	protected $st_id;
-	protected $st_com;
-	protected $user_id;
+    /**
+     * @var \Album\Entity\User
+     *
+     * @ORM\ManyToOne(targetEntity="Album\Entity\User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
+     * })
+     */
+    private $user;
 
 
-	public function getSt_id()
-	{
-		return $this->st_id;
-	}
 
-	public function setSt_id($st_id)
-	{
-		$this->st_id = $st_id;
-	}
+    /**
+     * Get stId
+     *
+     * @return integer 
+     */
+    public function getStId()
+    {
+        return $this->stId;
+    }
 
-	public function getSt_com()
-	{
-		return $this->st_com;
-	}
+    /**
+     * Set stCom
+     *
+     * @param string $stCom
+     * @return Status
+     */
+    public function setStCom($stCom)
+    {
+        $this->stCom = $stCom;
+    
+        return $this;
+    }
 
-	public function setSt_com($st_com)
-	{
-		$this->st_com = $st_com;
-	}
+    /**
+     * Get stCom
+     *
+     * @return string 
+     */
+    public function getStCom()
+    {
+        return $this->stCom;
+    }
 
-	public function getUser_id()
-	{
-		return $this->user_id;
-	}
+    /**
+     * Set user
+     *
+     * @param \Album\Entity\User $user
+     * @return Status
+     */
+    public function setUser(\Album\Entity\User $user = null)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
 
-	public function setUser_id()
-	{
-		$this->user_id = $user_id;
-	}
+    /**
+     * Get user
+     *
+     * @return \Album\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }
 ?>

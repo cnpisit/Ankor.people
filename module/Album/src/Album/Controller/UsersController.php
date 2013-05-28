@@ -31,6 +31,7 @@ class UsersController extends AbstractActionController
 
 
     public function indexAction() {
+<<<<<<< HEAD
 		$userdatas = array();
 
             $users = $this->getEntityManager()->getRepository('Album\Entity\Users')->findAll();
@@ -53,13 +54,49 @@ class UsersController extends AbstractActionController
 	public function addAction(){
 
     }
+=======
+		
+        $users = $this->getEntityManager()->getRepository('Album\Entity\User')->findAll();
+        
+        return new ViewModel(array ('fuck' =>$users));
+
+    }
+	public function userproviderAction()
+	{
+
+	}
+	public function addAction(){
+
+    }
+>>>>>>> 8aee110862b2be340c58d04a6626fe85f1b0b912
 
     public function deleteAction(){
 
     }
+<<<<<<< HEAD
 
     public function editAction(){
 
+=======
+    public function updateAction(){
+
+    }
+
+    public function editAction()
+    {
+        $id = $this->params('id');
+        $shop = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default')->find('\Album\Entity\User', $id);
+
+        if(null == $shop)
+        {
+            $this->redirect()->toRoute('users', array('controller' => 'users', 'action' => 'index'));
+        }
+//        var_dump($shop);
+        return new ViewModel(array(
+            'user' => $shop,
+            'submitText' => 'Update',
+         ));
+>>>>>>> 8aee110862b2be340c58d04a6626fe85f1b0b912
     }
 }
 

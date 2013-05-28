@@ -1,4 +1,6 @@
 ZendSkeletonApplication
+cnpisit
+
 =======================
 
 Introduction
@@ -48,18 +50,18 @@ Alternatively, you can install using native git submodules:
 
 Virtual Host
 ------------
-#	<VirtualHost *:80>
-	 ServerName ankorpeopel.local
-	 DocumentRoot "D:\web\ankorpeople\public"
-	 <Directory "D:\web\ankorpeople\public">
-	  Options Indexes FollowSymLinks MultiViews
-	  # AllowOverride None
-	  AllowOverride FileInfo
-	  Order allow,deny
-	  Allow from all
-	 </Directory>
-	 DirectoryIndex index.html index.php
-#	</VirtualHost>
+<VirtualHost *:80>
+ ServerName ankorpeopel.local
+ DocumentRoot "D:\web\ankorpeople\public"
+ <Directory "D:\web\ankorpeople\public">
+  Options Indexes FollowSymLinks MultiViews
+  # AllowOverride None
+  AllowOverride FileInfo
+  Order allow,deny
+  Allow from all
+ </Directory>
+ DirectoryIndex index.html index.php
+</VirtualHost>
 
 
 
@@ -325,5 +327,11 @@ return array(
   )
 );
 
+```
+command to generate Entity automatically
+``
+php vendor\doctrine\doctrine-module\bin\doctrine-module orm:convert-mapping annotation --from-database --namespace=<MODULE_NAME>\Entity\  module\<MODULE_NAME>\src --force
+
+php vendor\doctrine\doctrine-module\bin\doctrine-module orm:generate-entities --generate-annotations=true module\<MODULE_NAME>\src
 
 
