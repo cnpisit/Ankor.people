@@ -15,9 +15,11 @@
 
         <!-- Scripts -->
         <?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
-                                      ->prependFile($this->basePath() . '/js/bootstrap.min.js')
-                                      ->prependFile($this->basePath() . '/js/jquery.min.js') ?>
-
+										->prependFile($this->basePath() . '/fnagel-jquery-ui-ab6c744/ui/jquery.ui.core.js')
+                                      ->prependFile($this->basePath() . '/fnagel-jquery-ui-ab6c744/ui/jquery.ui.datepicker.js')
+									  ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+                                      ->prependFile($this->basePath() . '/js/jquery.min.js')
+									  ?>
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">

@@ -4,8 +4,11 @@ namespace Album\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Doctrine\ORM\EntityManager;
-use Album\Entity\Users;          // <-- Add this import
-//use Album\Form\UserForm;   
+use Album\Entity\Users;
+use Album\Entity\Status;
+use Album\Entity\User_Providers;
+// <-- Add this import
+//use Album\Form\UserForm;
 
 class UsersController extends AbstractActionController
 {
@@ -17,7 +20,7 @@ class UsersController extends AbstractActionController
     {
         return $this->entityManager = $em;
     }
-    
+
     protected function getEntityManager()
     {
       if (null === $this->entityManager) {
@@ -25,42 +28,38 @@ class UsersController extends AbstractActionController
       }
       return $this->entityManager;
     }
-  
-//    public function getUserTable()
-//    {
-//        if (!$this->userTable) {
-//            $sm = $this->getServiceLocator();
-//            $this->userTable = $sm->get('Album\Model\UserTable');
-//        }
-//        return $this->userTable;
-//    }
-    
+
+
     public function indexAction() {
-//          return new ViewModel(array(
-//            'users' => $this->getUserTable()->fetchAll(),
-//        ));
-//        $repository = $this->getEntityManager()->getRepository('Album\Entity\Users');
-//        $users      = $repository->findAll();
-// 
-//        return array(
-//            'users' => $users
-//        );
-        return new ViewModel(array(
-            'users' => $this->getEntityManager()->getRepository('Album\Entity\Users')->findAll() 
-        ));
+		$userdatas = array();
+
+            $users = $this->getEntityManager()->getRepository('Album\Entity\Users')->findAll();
+			$status = $this->getEntityManager()->getRepository('Album\Entity\Status')->findAll();
+
+
+//			var_dump($status);
+//		foreach ($users as $user)
+//		{
+//			$userdatas[] = $user;
+//		}
+
+//		return new ViewModel($userdatas);
     var_dump($users);
     }
-    
-    public function addAction(){
-        
+	public function userproviderAction()
+	{
+
+	}
+	public function addAction(){
+
     }
-    
+
     public function deleteAction(){
-        
+
     }
-    
+
     public function editAction(){
-        
+
     }
 }
 
