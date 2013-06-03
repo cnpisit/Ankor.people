@@ -48,14 +48,5 @@ class User_Providers {
 	{
 		$this->provider = $provider;
 	}
-
-    /**
-     * Get user_id
-     *
-     * @return integer 
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
 }
+?>

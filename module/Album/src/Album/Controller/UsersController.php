@@ -31,6 +31,30 @@ class UsersController extends AbstractActionController
 
 
     public function indexAction() {
+<<<<<<< HEAD
+		$userdatas = array();
+
+            $users = $this->getEntityManager()->getRepository('Album\Entity\Users')->findAll();
+			$status = $this->getEntityManager()->getRepository('Album\Entity\Status')->findAll();
+
+
+//			var_dump($status);
+//		foreach ($users as $user)
+//		{
+//			$userdatas[] = $user;
+//		}
+
+//		return new ViewModel($userdatas);
+    var_dump($users);
+    }
+	public function userproviderAction()
+	{
+
+	}
+	public function addAction(){
+
+    }
+=======
 		
         $users = $this->getEntityManager()->getRepository('Album\Entity\User')->findAll();
         
@@ -44,10 +68,16 @@ class UsersController extends AbstractActionController
 	public function addAction(){
 
     }
+>>>>>>> 8aee110862b2be340c58d04a6626fe85f1b0b912
 
     public function deleteAction(){
 
     }
+<<<<<<< HEAD
+
+    public function editAction(){
+
+=======
     public function updateAction(){
 
     }
@@ -66,6 +96,7 @@ class UsersController extends AbstractActionController
             'user' => $shop,
             'submitText' => 'Update',
          ));
+>>>>>>> 8aee110862b2be340c58d04a6626fe85f1b0b912
     }
 }
 

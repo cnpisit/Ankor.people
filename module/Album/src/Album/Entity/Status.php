@@ -5,20 +5,19 @@ namespace Album\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ *
+ * @ORM\Table(name="status")
+ * @ORM\Entity
+ *
+ */
+
+class Status{
+/**
  * Status
  *
  * @ORM\Table(name="status")
  * @ORM\Entity
  */
-class Status
-{
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="st_id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
     private $stId;
 
     /**
@@ -96,3 +95,4 @@ class Status
         return $this->user;
     }
 }
+?>

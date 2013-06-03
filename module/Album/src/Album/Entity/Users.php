@@ -77,18 +77,11 @@ class Users {
 
 
 
-
+}
 //$conn = mysqli_connect('localhost', 'root', '', 'album?zeroDateTimeBehavior=convertToNull', '3306');
 //if (!$conn) {
 //    die('Could not connect to MySQL: ' . mysqli_connect_error());
-//
-    /**
-     * Get user_id
-     *
-     * @return integer 
-     */
-    public function getUserId()
-    {
-        return $this->user_id;
-    }
-}
+//}
+//mysqli_query($conn, 'SET NAMES \'utf8\'');
+//// TODO: insert your code here.
+//mysqli_close($conn);

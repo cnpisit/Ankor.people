@@ -51,14 +51,6 @@ class Likes {
 		$this->user_id = $user_id;
 	}
 
-
-    /**
-     * Get like_id
-     *
-     * @return integer 
-     */
-    public function getLikeId()
-    {
-        return $this->like_id;
-    }
 }
+
+?>
