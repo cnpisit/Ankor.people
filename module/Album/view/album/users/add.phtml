@@ -1,1 +1,13 @@
 <h2>This is add pages</h2>
+<form class="form-horizontal" method="post" action="<?php echo $this->url('users/add', array('controller' => 'users', 'action' => 'add')) ?>">
+    <fieldset>
+        <legend>Add New User</legend>
+        <!--<div>Id: <input type="text" name="userId" placeholder="userId" ></div>-->
+        <div>Username: <input type="text" name="username" placeholder="username"></div>
+        <div>Display Name: <input type="text" name="displayname" placeholder="displayname"></div>
+        <div>Password:<input type="password" name="password" placeholder="password"></div>
+        <div>Email: <input type="text" name="email" placeholder="email"></div>
+        <div>State: <input type="text" name="state" placeholder="state"></div>
+        <div><input type="submit"  value="Add" class="btn btn-success"></div>
+    </fieldset>
+</form>

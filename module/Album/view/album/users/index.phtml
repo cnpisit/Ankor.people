@@ -1,18 +1,23 @@
-
-<?php
-
-
-$arr = array();
-foreach ($fuck as $u => $me)
-{   
-        $arr[$u] = $me->getUserId();
-}
-var_dump($arr);
-
-   
-?>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>USERNAME</th>
+        <th>MODIFY </th>
+    </tr>
+    
+        <?php foreach ($you as $user)
+            {
+                echo '<tr>';
+                echo '<td>'.$user->getUserId().'</td><br />';
+                echo '<td>'.$user->getUsername().'</td><br />';       
+                echo '<td><a href="'.$this->url('users/delete/id', array('controller' => 'users', 'action'=>'delete' , 'id' => $user->getUserId())) .'" ><i class="icon-trash"></I></a>';
+                echo '<a href="'.$this->url('users/edit/id', array('controller' => 'users', 'action'=>'edit' , 'id' => $user->getUserId())) .'" > <i class="icon-edit"></I></a></td>';
+                echo '<tr>';
+            }
+        ?>
+        
+</table>
 <button class="win-command">
     <a href="<?php echo $this->url('users/add', array('controller' => 'users', 'action' => 'add')) ?>" class="win-commandimage win-commandring"><span class="win-label">Add shop</span>&#xe12c;</a>
-
 </button>
 

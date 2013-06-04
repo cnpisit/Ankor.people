@@ -9,12 +9,12 @@
 <form class="form-horizontal" method="post" action="<?php echo $this->url('users/update', array('controller' => 'users', 'action' => 'update')) ?>">
     <fieldset>
         <legend>Update User</legend>
-        <div>Id: <input type="text" name="id" value="<?php echo $user->getUserId(); ?>"></div>
-        <div>Username: <input type="text" name="id" value="<?php echo $user->getUsername(); ?>"></div>
-        <div>Display Name: <input type="text" name="id" value="<?php echo $user->getDisplayName(); ?>"></div>
-        <div>Password:<input type="text" name="id" value="<?php echo $user->getPassword(); ?>"></div>
-        <div>Email: <input type="text" name="id" value="<?php echo $user->getEmail(); ?>"></div>
-        <div>State: <input type="text" name="id" value="<?php echo $user->getState(); ?>"></div>
-        <div><input type="submit" name="id" value="<?php echo $submitText; ?>" class="btn"></div>
+        <div>Id: <input type="text" name="userId" value="<?php echo $user->getUserId(); ?>"></div>
+        <div>Username: <input type="text" name="username" value="<?php echo $user->getUsername(); ?>"></div>
+        <div>Display Name: <input type="text" name="displayname" value="<?php echo $user->getDisplayName(); ?>"></div>
+        <div>Password:<input type="text" name="password" value="<?php echo $user->getPassword(); ?>"></div>
+        <div>Email: <input type="text" name="email" value="<?php echo $user->getEmail(); ?>"></div>
+        <div>State: <input type="text" name="state" value="<?php echo $user->getState(); ?>"></div>
+        <div><input type="submit"  value="<?php echo $submitText; ?>" class="btn"></div>
     </fieldset>
 </form>
