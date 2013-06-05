@@ -9,10 +9,10 @@ namespace Album\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Doctrine\ORM\EntityManager;
-use Album\Entity\TblGalleries;
-use Album\Entity\TblArtEntiry;
-use Album\Entity\TblLikeArt;
-use Album\Entity\TblComments;
+//use Album\Entity\TblGalleries;
+//use Album\Entity\TblArtEntiry;
+//use Album\Entity\TblLikeArt;
+//use Album\Entity\TblComments;
 
 class GalleriesController extends AbstractActionController
 {
@@ -33,6 +33,8 @@ class GalleriesController extends AbstractActionController
     
     public function indexAction() {
         $galleries = $this->getEntityManager()->getRepository('Album\Entity\TblGalleries')->findAll();
+        var_dump($galleries);
+        
         
         return new ViewModel ( 
                 array( 
@@ -46,6 +48,7 @@ class GalleriesController extends AbstractActionController
         
         if ($request->isPost())
         {
+            //obtain data from form
             $galleries = (array) $request->getPost();
 //            var_dump($galleries);
             
@@ -53,8 +56,10 @@ class GalleriesController extends AbstractActionController
         
         if (isset($galleries))
         {
+            //Create new object 
             $newGal = new \Album\Entity\TblGalleries;
             
+            //Prepaire data for insert 
             $newGal->setGalName($galleries['galName']);
             $newGal->setGalStatut($galleries['galStatut']);
             $newGal->setGalAddress1($galleries['galAddress']);
@@ -67,10 +72,12 @@ class GalleriesController extends AbstractActionController
             $newGal->setGalPhoneNumber($galleries['galPhoneNumber']);
             $newGal->setSur($galleries['sur']);
             
+            //insert data 
             $em = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
             $em->persist($newGal);
             $em->flush();
             
+            //go to index page ofter Add 
             $this->redirect()->toRoute('galleries', array('controller' => 'Galleries', 'action' => 'index'));
         }
         
