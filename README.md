@@ -327,11 +327,11 @@ return array(
   )
 );
 
-``````````````````````````
+``````````````````````````````````````
 command to generate Entity automatically
-```````````````````````````
-php vendor\doctrine\doctrine-module\bin\doctrine-module orm:convert-mapping annotation --from-database --namespace= <<MODULE_NAME>\Entity\  module\\<MODULE_NAME>\src --force
+`````````````````````````````````````````
+php vendor\doctrine\doctrine-module\bin\doctrine-module orm:convert-mapping annotation --from-database --namespace=<MODULE_NAME>\Entity\  module\<MODULE_NAME>\src --force
 
-php vendor\doctrine\doctrine-module\bin\doctrine-module orm:generate-entities --generate-annotations=true module\\<MODULE_NAME>\src
+php vendor\doctrine\doctrine-module\bin\doctrine-module orm:generate-entities --generate-annotations=true module\<MODULE_NAME>\src
 
 
