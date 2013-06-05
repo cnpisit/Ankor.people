@@ -51,6 +51,20 @@ return array(
                     ),
                 ),     
             ),
+            'galleries' => array(
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/galleries[/][:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                        ),
+                    'defaults' => array(
+                        'controller'    => 'Galleries',
+                        'action'        => 'index',
+                    ),
+                ),     
+            ),
 //    ),
 
             // The following is a route to simplify getting started creating
@@ -103,7 +117,8 @@ return array(
     'controllers' => array(
         'invokables' => array(
             'Index' => 'Album\Controller\IndexController',
-            'Users' => 'Album\Controller\UsersController'
+            'Users' => 'Album\Controller\UsersController',
+            'Galleries' => 'Album\Controller\GalleriesController'
         ),
     ),
     'view_manager' => array(
@@ -116,6 +131,7 @@ return array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
             'album/index/index' => __DIR__ . '/../view/album/index/index.phtml',
             'album/users/index'  => __DIR__ . '/../view/album/users/index.phtml',
+            'album/galleries/index'  => __DIR__ . '/../view/album/galleries/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),

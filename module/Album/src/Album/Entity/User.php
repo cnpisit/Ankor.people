@@ -67,17 +67,6 @@ class User
     {
         return $this->userId;
     }
-    
-    /**
-     * Set userId
-     *
-     * @param interger $userId
-     * @return User
-     */
-    public function setUserId($userId)
-    {
-        $this->userId = $userId;
-    }
 
     /**
      * Set username
